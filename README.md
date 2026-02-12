@@ -15,17 +15,10 @@
 - Abrir la solución ChubbReto.sln y restaurar los paquetes nuget.
 - Establecer ChubbReto.Web como proyecto de inicio si no lo estuviera.
 - Ejecutar el script de base de datos que se encuentra en la carpeta /Database y ejecutar el archivo ChubbReto-Data.sql.
-- En el archivo web.config de ChubbReto.Web cambiar la cadena de conexión por los datos del su sql local, reemplazando los datos entre corchetes:
-  	<connectionStrings>
-    		<add name="DefaultConnection" connectionString="Server=[instancia];Database=CHUBB_RETO;User Id=[usuario];Password=[password];TrustServerCertificate=True;" providerName="System.Data.SqlClient" />
-     </connectionStrings>
+- En el archivo web.config de ChubbReto.Web, buscar la llave DefaultConnection y cambiar el valor de connectionString por los datos del su sql local, reemplazando los datos entre corchetes dentro del conexión (Server=[instancia];Database=CHUBB_RETO;User Id=[usuario];Password=[password];TrustServerCertificate=True;). 
 - Antes de ejecutar el proyecto limipiar la solución (Menú: Build > Build Clean Solución) y compilar (Menú: Build > Build Solution).
 
 ## Notas
 
 - La solución está implementada en .NET Framework 4.7.2.
-- La configuración de máximo de libros permitidos por autor en el Web.Config está en :
-  <appSettings>
-    ....
-	  <add key="MaxBooksPerAuthor" value="4" />
-  </appSettings>
+- La configuración de máximo de libros permitidos por autor en el Web.Config buscarla por la llave "MaxBooksPerAuthor".
