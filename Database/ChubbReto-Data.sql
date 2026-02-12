@@ -1,6 +1,7 @@
-DROP TABLE Books;
-DROP TABLE Authors;
-DROP TABLE Genres;
+CREATE DATABASE CHUBB_RETO;
+GO
+
+USE CHUBB_RETO;
 
 CREATE TABLE Authors(
 	AuthorId int identity(1,1) not null,
@@ -31,9 +32,9 @@ CREATE TABLE Books(
 )
 
 INSERT INTO Authors VALUES ('Mario Vargas Llosa', '1936-03-28', 'Arequipa', 'contacto@mvll.com');
-INSERT INTO Authors VALUES ('Robert C. Martín', '1952-12-05', null, 'unclebob@cleancoder.com');
-INSERT INTO Authors VALUES ('Carlos Ruiz Zafón', '1964-09-25', 'Barcelona', 'yo@carlosruizzafon.com');
-INSERT INTO Authors VALUES ('Gabriel García Márquez', '1927-03-06', null , 'contacto@gabrielgarciamarquez.com');
+INSERT INTO Authors VALUES ('Robert C. MartÃ­n', '1952-12-05', null, 'unclebob@cleancoder.com');
+INSERT INTO Authors VALUES ('Carlos Ruiz ZafÃ³n', '1964-09-25', 'Barcelona', 'yo@carlosruizzafon.com');
+INSERT INTO Authors VALUES ('Gabriel GarcÃ­a MÃ¡rquez', '1927-03-06', null , 'contacto@gabrielgarciamarquez.com');
 
 SELECT * FROM Authors
 
@@ -41,8 +42,8 @@ INSERT INTO Genres VALUES ('Novela');
 INSERT INTO Genres VALUES ('Poesia');
 INSERT INTO Genres VALUES ('Autoayuda');
 INSERT INTO Genres VALUES ('Ciencias Sociales');
-INSERT INTO Genres VALUES ('Informática');
-INSERT INTO Genres VALUES ('Ingeniería');
+INSERT INTO Genres VALUES ('InformÃ¡tica');
+INSERT INTO Genres VALUES ('IngenierÃ­a');
 INSERT INTO Genres VALUES ('Politica');
 INSERT INTO Genres VALUES ('Historia');
 INSERT INTO Genres VALUES ('Otros');
@@ -50,9 +51,9 @@ INSERT INTO Genres VALUES ('Otros');
 SELECT * FROM Genres
 
 
-INSERT INTO Books VALUES ('Conversación en la Catedral', 1969, 1, 680, 1);
+INSERT INTO Books VALUES ('ConversaciÃ³n en la Catedral', 1969, 1, 680, 1);
 INSERT INTO Books VALUES ('La ciudad y los perros', 1963, 1, 420, 1);
-INSERT INTO Books VALUES ('Travesuras de la niña mala', 2006, 1, 400, 1);
+INSERT INTO Books VALUES ('Travesuras de la niÃ±a mala', 2006, 1, 400, 1);
 INSERT INTO Books VALUES ('La fiesta del Chivo', 2000, 1, 510, 1);
 INSERT INTO Books VALUES ('Clean Code', 2008, 5, 644, 2);
 INSERT INTO Books VALUES ('La sombra del viento', 2001, null, 576, 3);
