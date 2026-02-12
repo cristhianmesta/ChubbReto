@@ -6,7 +6,7 @@
   
   - ChubbReto.Domain: Contiene la entidades de dominio y la abastracciones del repositorio.
   - ChubbReto.Application: Está estructurado en corte vertical para mejor escalabilidad de features por carpetas, dentro de estos las interfaces de servicios, implementación de servicios y DTOs y objetos compartidos por las diferentes features. Se implementa el Patrón de Servicios y Patrón de resultado para un mejor manejo de errores y excepciones.
-  - ChubbReto.Infraestructura: Contiene la implementación la implementaciín de Patrón repositorio indicados por el dominio. Los repositorios están implementados con Dapper.
+  - ChubbReto.Infraestructure: Contiene la implementación de Patrón repositorio indicados por el dominio. Los repositorios están implementados con Dapper.
   - ChubbReto.Web: Contiene el Front desarrollado en MVC(Modelos, vistas y controladores) con pagos Razor(.cshtml). Aqui se configura la inyección de dependencias.
 
 ## Instrucciones:
