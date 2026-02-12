@@ -21,8 +21,8 @@
 ## Instrucciones de usuario
 
 - La solución cuanta con 2 menús: Libros y autores.
-- Cada Menú, contiene la lista de libros que hay en base de datos.
-- Cada Listado cuanta con un botón para Registrar un Libros y Autor respectivamente.
+- Cada menú, contiene la lista de libros y autores que hay en base de datos.
+- Cada listado cuanta con un botón para Registrar un Libros y Autor respectivamente.
 - Al presionar cada uno de los botones se accede al formulario de registro.
 
 ## Notas
