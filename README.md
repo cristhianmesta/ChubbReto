@@ -1,70 +1,31 @@
-# Prueba Técnica para Desarrollador .NET
-
-**Duración máxima:** 1 día
-
-## Requerimientos
-
-- **Lenguaje:** C#
-- **Base de datos:** SQL Server
-- **Back-End:** .NET Framework 4.5 o mayor
-- **Front-End:** .NET Framework 4.5 o mayor (Razor)
-
-## Objetivo
-
-Desarrollar componentes en .NET para:
-
-- Registrar libros:
-  - Título (*)
-  - Año (*)
-  - Género 
-  - Número de páginas 
-  - Autor (*)
-
-- Registrar autores:
-  - Nombre completo (*)
-  - Fecha de nacimiento (*)
-  - Ciudad de procedencia
-  - Correo electrónico (*)
-
-## Reglas de Negocio
-
-- Todos los campos marcados con (*) son obligatorios.
-- Garantizar la integridad de la información.
-- Controlar el número máximo de libros permitidos.
-- Si se supera el máximo de libros, lanzar excepción con mensaje:
-  **“No es posible registrar el libro, se alcanzó el máximo permitido.”**
-- Si el autor no existe al registrar un libro, responder con:
-  **“El autor no está registrado”.**
+# Solución prueba técnica Chubb
 
 ## Aspectos Técnicos
 
-- Estructura de paquetes:
-  - Entidades
-  - DTOs
-  - Interfaces
-  - Servicios (implementación)
-  - Controladores
-  - Excepciones
-- Usar inyección de dependencias.
-- Aplicar buenas prácticas de desarrollo y código legible.
+- El solución se organiza de las siguiente manera:
+  
+  - ChubbReto.Domain: Contiene la entidades de dominio y la abastracciones del repositorio.
+  - ChubbReto.Application: Está estructurado en corte vertical para mejor escalabilidad de features por carpetas, dentro de estos las interfaces de servicios, implementación de servicios y DTOs y objetos compartidos por las diferentes features. Se implementa el Patrón de Servicios y Patrón de resultado para un mejor manejo de errores y excepciones.
+  - ChubbReto.Infraestructura: Contiene la implementación la implementaciín de Patrón repositorio indicados por el dominio. Los repositorios están implementados con Dapper.
+  - ChubbReto.Web: Contiene el Front desarrollado en MVC(Modelos, vistas y controladores) con pagos Razor(.cshtml). Aqui se configura la inyección de dependencias.
 
-## Entregables
+## Instrucciones:
 
-- Código fuente completo y funcional.
-- Script de base de datos (creación de tablas y datos de prueba).
-- Instrucciones para ejecutar el proyecto.
+- Descargar el repositorio en maquina local.
+- Abrir la solución ChubbReto.sln y restaurar los paquetes nuget.
+- Establecer ChubbReto.Web como proyecto de inicio si no lo estuviera.
+- Ejecutar el script de base de datos que se encuentra en la carpeta /Database y ejecutar el archivo ChubbReto-Data.sql.
+- En el archivo web.config de ChubbReto.Web cambiar la cadena de conexión por los datos del su sql local, reemplazando los datos entre corchetes:
+  	<connectionStrings>
+    		<add name="DefaultConnection" connectionString="Server=[instancia];Database=CHUBB_RETO;User Id=[usuario];Password=[password];TrustServerCertificate=True;" providerName="System.Data.SqlClient" />
+     </connectionStrings>
+- Antes de ejecutar el proyecto limipiar la solución (Menú: Build > Build Clean Solución) y compilar (Menú: Build > Build Solution).
 
-## Sugerencia de Cronograma (1 día)
+## Notas
 
-| Hora | Actividad |
-|------|-----------|
-| 1    | Análisis de requerimientos y diseño de la base de datos |
-| 2-3  | Implementación de entidades, DTOs e interfaces |
-| 4-5  | Desarrollo de servicios y lógica de negocio |
-| 6    | Creación de controladores y excepciones |
-| 7    | Desarrollo del Front-End básico |
-| 8    | Pruebas, ajustes y documentación |
-
----
-
-¡Éxito en tu desarrollo!
+- La solución está implementada en .NET Framework 4.7.2.
+- La configuración de máximo de libros permitidos por autor en el Web.Config está en :
+  <appSettings>
+    ....
+	  <add key="MaxBooksPerAuthor" value="4" />
+  </appSettings>
